@@ -11,62 +11,6 @@ There we have a main application "product-application", that send a message to R
 we have two applications "customer-application" and "seller-application" that are listening for this messages in redis.
 Project structure:
 
-```
-── pom.xml
-── src
-    ├── main    
-    │   ├─── java
-    │   │       └─── laurens
-    │   │             └─── poc    
-    │   │                    └─── springscaffoldproject
-    │   │                       ├─── config
-    │   │                       │       └─── ProductPublisherConfiguration.java
-    │   │                       ├─── controller
-    │   │                       │       └─── ProductController.java
-    │   │                       ├─── entities
-    │   │                       │       └─── Product.java
-    │   │                       ├─── exceptions
-    │   │                       │       ├─── ProductException.java
-    │   │                       │       └─── ProductExceptionController.java
-    │   │                       ├─── message
-    │   │                       │       ├─── ProductData.java
-    │   │                       │       └─── ProductPublisher.java
-    │   │                       ├─── services
-    │   │                       │       └─── ProductService.java
-    │   │                       └─── SpringScaffoldProjectApplication.java
-    ├───test    
-    │   ├─── java
-    │   │       └─── laurens
-    │   │             └─── poc    
-    │   │                    └─── springscaffoldproject
-    │   │                       ├─── controller
-    │   │                       │       └─── ProductControllerTest.java
-    │   │                       └─── SpringScaffoldProjectApplicationTests.java
-    │   └─── resources
-    │           ├─── application.properties
-    │           ├─── static
-    │           └─── templates
-               
-```
-Step-by-step
-
-1. First we have to clone the base project [here](https://github.com/plaurensf/spring-scaffold-project).
-2. Then, add the next Redis dependency for spring, to the pom file.
-
-```
-<dependency>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-data-redis</artifactId>
-</dependency>
-```
-3. Next, we have to create our publisher, in a pub/sub architecture, this is the subject
-that publish or send the message to the target topic. Then, we have to create first, a 
-configuration class for configure all redis stuff for messaging like, topic and the redisTemplate
-object. In my case, I called the class "ProductPublisherConfiguration"
-
-4. Then, we have to create our class which send the message to the topic, in my case I called "ProductPublisher"
-5. Finally, we have finished the logic on the publisher side. Now we have to move to the subscriber side.
-
 ** Recomendations **
 
 1. The structure of the project could be a little better, instead of create different projects, we could create a single project
