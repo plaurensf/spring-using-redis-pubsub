@@ -11,7 +11,7 @@ There we have a main application "product-application", that send a message to R
 we have two applications "customer-application" and "seller-application" that are listening for this messages in redis.
 Project structure:
 
-** Recomendations **
+**Recomendations**
 
 1. The structure of the project could be a little better, instead of create different projects, we could create a single project
 with a global pom.xml that manage the basic dependencies, and manage the other projects like modules.
