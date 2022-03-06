@@ -1,0 +1,7 @@
+spring:
+  application:
+    redis:
+      topic: product-topic
+
+server:
+  port: 8086

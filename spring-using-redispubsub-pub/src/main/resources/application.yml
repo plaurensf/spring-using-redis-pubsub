@@ -1,0 +1,8 @@
+application:
+  redis:
+    hostname: localhost
+    port: 6379
+    topic: product-topic
+
+server:
+  port: 8085
